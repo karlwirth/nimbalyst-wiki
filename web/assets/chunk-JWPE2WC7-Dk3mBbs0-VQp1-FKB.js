@@ -1,0 +1,1 @@
+import{_ as o}from"./index-D_6CkqFi-Dgm8cjUp.js";typeof process>"u"&&(globalThis.process={env:{NODE_ENV:"production"},browser:!0,platform:""});function e(t,c){t.accDescr&&c.setAccDescription?.(t.accDescr),t.accTitle&&c.setAccTitle?.(t.accTitle),t.title&&c.setDiagramTitle?.(t.title)}o(e,"populateCommonDb");export{e as i};

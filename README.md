@@ -55,7 +55,7 @@ You can also just ask: "start a wiki for this repo", "what does the wiki say abo
 
 ### Reading the wiki in your browser
 
-Ask Claude to open the wiki in your browser. It starts a server on your machine and opens a tab with the page tree, the page editor, typed pages and type tables. Edits save straight to the files, and pages Claude writes show up while you watch. The server only accepts connections from this machine, with the token in the link, and stops when the session ends.
+Ask Claude to open the wiki in your browser. It starts a server on your machine and opens a tab with the page tree, the page editor, typed pages and type tables. Drawings (Excalidraw), mind maps, CSV spreadsheets, calc sheets, data models, mockups and project canvases open in their own editors and can be created from the New page menu. Edits save straight to the files, and pages Claude writes show up while you watch. The server only accepts connections from this machine, with the token in the link, and stops when the session ends.
 
 ### Which wiki Claude uses
 
@@ -99,6 +99,22 @@ Two differences from Claude Code:
 - Codex does not run hooks that come with a plugin, so there is no reminder to capture decisions at the end of a session. Ask for it ("record what we decided in the wiki").
 - `nimbalyst-session` reads Claude Code transcripts only, so decisions recorded from Codex are marked with your name but carry no quote from the session.
 
+## Other agents
+
+Cursor, VS Code, the Claude desktop app and any other MCP client use the wiki through `nim mcp`, the same local server the plugin bundles. Install the `nim` command line (Node.js 22 or later):
+
+```sh
+npm install -g @nimbalyst/cli
+```
+
+Then add the server to the agent's MCP settings:
+
+- **Cursor**, in `.cursor/mcp.json`: `{ "mcpServers": { "nimbalyst-wiki": { "command": "nim", "args": ["mcp", "--workspace", "${workspaceFolder}"] } } }`
+- **VS Code** (Copilot in agent mode), in `.vscode/mcp.json`: `{ "servers": { "nimbalyst-wiki": { "command": "nim", "args": ["mcp", "--workspace", "${workspaceFolder}"] } } }`
+- **Claude desktop app**: the same `mcpServers` entry with the project's full path in place of `${workspaceFolder}`. If the app cannot find `nim`, use the path `which nim` prints.
+
+Then ask the agent to start a wiki for this repo. These agents get the wiki tools but not the plugin's skills (`setup`, `capture` and the writing guide), so ask for what you want in your own words. To open the wiki in the browser from these agents, also install the browser app: `npm install -g @nimbalyst/wiki-web`.
+
 ## Nimbalyst app
 
 Open **Wiki** in the navigation gutter (Cmd+D).
@@ -137,7 +153,7 @@ nim wiki serve                        # open the wiki in your browser
 
 ### `nim wiki serve`
 
-The same browser view as the plugin's, from a terminal. It opens the local wiki in your browser to read and edit: the page tree, pages in the same editor as the app, typed pages with their fields, and type tables. Edits save straight to the files, and changes made in your editor or by an agent show up live.
+The same browser view as the plugin's, from a terminal. It opens the local wiki in your browser to read and edit: the page tree, pages in the same editor as the app, typed pages with their fields, type tables, and drawings, mind maps, spreadsheets, calc sheets, data models, mockups and canvases in their own editors. Edits save straight to the files, and changes made in your editor or by an agent show up live.
 
 The server listens on this machine only and requires the token in the URL it opens. The browser app is a separate package; the first time, `nim` prints the command to install it:
 

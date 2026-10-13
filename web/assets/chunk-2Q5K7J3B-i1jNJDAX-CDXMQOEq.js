@@ -1,0 +1,1 @@
+import{_ as s}from"./index-D_6CkqFi-Dgm8cjUp.js";typeof process>"u"&&(globalThis.process={env:{NODE_ENV:"production"},browser:!0,platform:""});var t,o=(t=class{constructor(r){this.init=r,this.records=this.init()}reset(){this.records=this.init()}},s(t,"ImperativeState"),t);export{o as r};
