@@ -1,0 +1,1 @@
+import{u as i}from"./mermaid.core-B_7u-4u6-CLEC9s9X.js";var s=class{constructor(t){this.init=t,this.records=this.init()}static{i(this,"ImperativeState")}reset(){this.records=this.init()}};export{s as r};
