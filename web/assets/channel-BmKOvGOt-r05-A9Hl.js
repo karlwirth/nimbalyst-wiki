@@ -1,0 +1,1 @@
+import{U as s,F as p}from"./index-0in-mCrS-BlnYBuvj.js";typeof process>"u"&&(globalThis.process={env:{NODE_ENV:"production"},browser:!0,platform:""});const e=(o,r)=>s.lang.round(p.parse(o)[r]);export{e as t};
