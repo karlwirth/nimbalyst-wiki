@@ -255,19 +255,6 @@ Pages hold more than text. Ask your agent for a drawing, a mind map, a spreadshe
 
 ---
 
-## Open it in the Nimbalyst app
-
-The same files open in the free, open-source [Nimbalyst app](https://nimbalyst.com/wiki/local/), with live tables, 2x2s, mockups and diagrams you edit in place, next to your sessions and code. Open **Wiki** in the navigation gutter (Cmd+D) and choose **Local**. Nothing moves: the app reads the same folder your agent writes to. Inside the app, agents already have the wiki tools, and the plugin stands aside so each page has one write path.
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/app-dark.webp">
-    <img src="docs/images/app-light.webp" alt="The Competitors page in the Nimbalyst app's Local wiki, with a live table of competitors and a 2x2 below it" width="900">
-  </picture>
-</p>
-
----
-
 ## Share it with your team
 
 When your team needs the wiki too, ask your agent to move it to [Nimbalyst Teams](https://nimbalyst.com/wiki/teams/), or run the commands yourself. Your text pages, typed pages and the links between them move to a team wiki where everyone edits the same pages in their browser and every teammate's agents write into it.
@@ -293,9 +280,7 @@ nim wiki move-to-team
   </picture>
 </p>
 
-<details>
-<summary><b>What happens during the move</b></summary>
-<br>
+### What happens during the move
 
 In Claude Code, `/nimbalyst-wiki:team` walks you through it:
 
@@ -307,77 +292,45 @@ In Claude Code, `/nimbalyst-wiki:team` walks you through it:
 
 Your local files are not deleted. Commit `.nimbalyst/wiki.json` so your teammates' agents find the same project.
 
-</details>
-
-<details>
-<summary><b>If you were invited</b></summary>
-<br>
+### If you were invited
 
 An invite email or link signs you in to Nimbalyst in the browser and opens the team's wiki. You can read, edit and comment there with nothing installed.
 
 To use the wiki from Claude Code too, install this plugin, run `/mcp`, choose `nimbalyst-team` and Authenticate with the same email. In Codex, run `codex mcp login nimbalyst-team`. If the repository has a committed `.nimbalyst/wiki.json`, your agent uses that team project right away; otherwise it finds the project through the repository's git remote.
 
-</details>
-
 ---
 
 ## Common questions
 
-<details>
-<summary><b>Do I need the Nimbalyst app?</b></summary>
-<br>
+### Do I need the Nimbalyst app?
 
 No. Your agent, the `nim` CLI and the browser view give you a complete wiki, including drawings, mind maps, spreadsheets, data models, mockups and canvases you can edit in the browser. Open it in the Nimbalyst app when you want the wiki in the same place as your sessions and code.
 
-</details>
-
-<details>
-<summary><b>What is Nimbalyst?</b></summary>
-<br>
+### What is Nimbalyst?
 
 Nimbalyst is the visual workspace for Codex and Claude Code. It runs your agents in parallel sessions and gives you visual editors for the work around them, including tasks, docs, diagrams, mockups, spreadsheets and code, all deeply linked. Every AI edit arrives as a diff you can review. The desktop app is free and open source for individuals, on macOS, Windows and Linux, and Nimbalyst Teams makes it multiplayer.
 
-</details>
-
-<details>
-<summary><b>Do I need an account?</b></summary>
-<br>
+### Do I need an account?
 
 Not for a local wiki. You only sign in to Nimbalyst when you share the wiki with your team.
 
-</details>
-
-<details>
-<summary><b>Is it the same wiki as the one in the app?</b></summary>
-<br>
+### Is it the same wiki as the one in the app?
 
 Yes. The app's Local wiki is the same folder of files, so you can start in your agent and open the app later without moving anything.
 
-</details>
-
-<details>
-<summary><b>Where does my wiki live?</b></summary>
-<br>
+### Where does my wiki live?
 
 In your project, in `nimbalyst-local/wiki` by default, which git ignores. Choose a folder such as `docs/wiki` to check it in and share it through git.
 
-</details>
-
-<details>
-<summary><b>What should go in it?</b></summary>
-<br>
+### What should go in it?
 
 Decisions and their reasons, open questions, the preferences and constraints people set, and hard-won lessons. The work itself stays in your sessions, code and trackers, and the wiki links to it.
-
-</details>
 
 ---
 
 ## Reference
 
-<details>
-<summary><b>Skills</b></summary>
-<br>
+### Skills
 
 | Skill | What it does |
 | --- | --- |
@@ -388,11 +341,7 @@ Decisions and their reasons, open questions, the preferences and constraints peo
 | `/nimbalyst-wiki:connect` | Chooses which wiki the session uses and connects a repository to a team project. Runs on its own when needed. |
 | `/nimbalyst-wiki:update` | The writing guide the agent follows for every wiki edit. You rarely call it yourself. |
 
-</details>
-
-<details>
-<summary><b>What the plugin installs</b></summary>
-<br>
+### What the plugin installs
 
 Three MCP servers, listed by `/mcp` in Claude Code and `codex mcp list` in Codex:
 
@@ -402,11 +351,7 @@ Three MCP servers, listed by `/mcp` in Claude Code and `codex mcp list` in Codex
 | `nimbalyst-session` | Lets the agent cite what you typed in this session when it records a decision. Reads only this session's transcript, on your machine. |
 | `nimbalyst-team` | The team wiki on the Nimbalyst server. Leave it disconnected if you only use a local wiki. |
 
-</details>
-
-<details>
-<summary><b>Which wiki the agent uses</b></summary>
-<br>
+### Which wiki the agent uses
 
 At the start of wiki work the agent decides once per session:
 
@@ -416,11 +361,7 @@ At the start of wiki work the agent decides once per session:
 
 It never writes the same thing to both. Team data never goes through the local server.
 
-</details>
-
-<details>
-<summary><b>How decisions are recorded</b></summary>
-<br>
+### How decisions are recorded
 
 A decision is a marked sentence in the page it affects:
 
@@ -433,11 +374,7 @@ A decision is a marked sentence in the page it affects:
 - On a local wiki the name and email come from `git config user.name` and `git config user.email`.
 - Set `NIMBALYST_WIKI_NUDGE_MIN_EDITS` to change how many edits trigger the capture reminder.
 
-</details>
-
-<details>
-<summary><b>Updating the plugin</b></summary>
-<br>
+### Updating the plugin
 
 Once a day the plugin checks GitHub for a newer version, and if there is one, the agent mentions it the next time it uses the wiki. The check sends nothing about you or your wiki. Set `NIMBALYST_WIKI_NO_UPDATE_CHECK=1` to turn it off.
 
@@ -459,11 +396,9 @@ claude plugin update nimbalyst-wiki@nimbalyst-wiki
 /plugin install nimbalyst-wiki@nimbalyst-wiki
 ```
 
-</details>
+### Other agents
 
-<details id="other-agents">
-<summary><b>Other agents: Cursor, VS Code, Cowork, the Codex app, any MCP agent</b></summary>
-<br>
+Cursor, VS Code, Cowork, the Codex app and any other MCP agent.
 
 These agents use the wiki through `nim mcp`, the same local server the plugin bundles. Install the `nim` CLI, then add the server to your agent's MCP config:
 
@@ -493,11 +428,7 @@ If the app cannot find `nim`, use the full path that `which nim` prints. Then as
 
 These agents get the wiki tools but not the plugin's skills (`setup`, `capture` and the writing guide), so ask for what you want in your own words. To open the wiki in the browser from them, also install the browser app: `npm install -g @nimbalyst/wiki-web`.
 
-</details>
-
-<details id="nim-command-line">
-<summary><b><code>nim</code> command line</b></summary>
-<br>
+### `nim` command line
 
 For scripts and your own terminal. You don't need it to use the plugin. `nim wiki` works on both the local and the team wiki.
 
@@ -519,11 +450,7 @@ nim wiki move-to-team --dry-run       # preview moving the local wiki to Teams
 - `nim tracker list/get/create/update` work on typed pages in the local wiki.
 - Team commands (`status`, `edit`, `create`, `items` and more) need `nim login`. `nim --help` lists them all.
 
-</details>
-
-<details>
-<summary><b>The files</b></summary>
-<br>
+### The files
 
 The wiki is plain files you can read, edit, diff and commit without any Nimbalyst tool. The full contract is [FORMAT.md](FORMAT.md).
 
@@ -551,7 +478,18 @@ nimbalyst-local/wiki/
 
 Agents can edit the files directly too. The MCP tools and `nim` add ids, ordering, link rewriting on moves, type fields, CSV rows and trash.
 
-</details>
+---
+
+## Open it in the Nimbalyst app
+
+The same files open in the free, open-source [Nimbalyst app](https://nimbalyst.com/wiki/local/), with live tables, 2x2s, mockups and diagrams you edit in place, next to your sessions and code. Open **Wiki** in the navigation gutter (Cmd+D) and choose **Local**. Nothing moves: the app reads the same folder your agent writes to. Inside the app, agents already have the wiki tools, and the plugin stands aside so each page has one write path.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/app-dark.webp">
+    <img src="docs/images/app-light.webp" alt="The Competitors page in the Nimbalyst app's Local wiki, with a live table of competitors and a 2x2 below it" width="900">
+  </picture>
+</p>
 
 ---
 
