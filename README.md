@@ -518,8 +518,7 @@ The same files open in the free, open-source [Nimbalyst app](https://nimbalyst.c
 <h3 align="center">Built with love by the Nimbalyst team</h3>
 
 <p align="center">
-  The Nimbalyst Wiki is part of <a href="https://nimbalyst.com">Nimbalyst</a>, the open-source visual workspace for Codex and Claude Code, and is built from <a href="https://github.com/nimbalyst/nimbalyst">our main repository</a>.<br>
-  For anything about the wiki, star this repository, file issues and send pull requests here. MIT licensed.
+  The Nimbalyst Wiki is part of <a href="https://nimbalyst.com">Nimbalyst</a>, the open-source visual workspace for Codex and Claude Code, and is built from <a href="https://github.com/nimbalyst/nimbalyst">our main repository</a>. For anything about the wiki, star this repository, file issues and send pull requests here. MIT licensed.
 </p>
 
 <p align="center">
