@@ -55,7 +55,7 @@ Overwhelmed and disorganized working with agents? Your agent distills what you w
     <td width="50%" valign="top"><b>Stays on your machine</b><br>A local wiki needs no account and no server. The browser view listens on your machine only and is protected by a token.</td>
   </tr>
   <tr>
-    <td width="50%" valign="top"><b>One wiki for every agent</b><br>Claude Code, Codex, Cowork, Cursor and VS Code all use the same tools on the same files, so you can switch agents without losing what they wrote.</td>
+    <td width="50%" valign="top"><b>One wiki across every agent</b><br>Claude Code, Codex, Cowork, Cursor and VS Code all use the same tools on the same files, so you can switch agents without losing what they wrote.</td>
     <td width="50%" valign="top"><b>Drawings, sheets and mockups too</b><br>Drawings, mind maps, spreadsheets, data models, mockups and canvases are pages too. Each keeps its own file, such as <code>.excalidraw</code>, <code>.csv</code>, <code>.prisma</code> or <code>.mockup.html</code>, so other tools can still open it.</td>
   </tr>
 </table>
