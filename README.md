@@ -32,6 +32,7 @@
   <a href="#watch-the-demo"><b>Demo</b></a> &nbsp;·&nbsp;
   <a href="#what-you-can-do"><b>Features</b></a> &nbsp;·&nbsp;
   <a href="#share-it-with-your-team"><b>Teams</b></a> &nbsp;·&nbsp;
+  <a href="#common-questions"><b>FAQ</b></a> &nbsp;·&nbsp;
   <a href="#reference"><b>Reference</b></a> &nbsp;·&nbsp;
   <a href="https://nimbalyst.com/wiki/coding-agents/"><b>Website</b></a>
 </p>
@@ -49,12 +50,12 @@ Overwhelmed and disorganized working with agents? Your agent distills what you w
 
 <table>
   <tr>
-    <td width="50%" valign="top"><b>Markdown files in your repo</b><br>Keep it private in <code>nimbalyst-local/wiki</code> or check it in under <code>docs/wiki</code>, and diff and commit it like code.</td>
-    <td width="50%" valign="top"><b>Stays on your machine</b><br>A local wiki needs no account and no server, and the browser view listens on localhost only, behind a token.</td>
+    <td width="50%" valign="top"><b>Files in your repo</b><br>Text pages are markdown files in your project. By default the wiki lives in <code>nimbalyst-local/wiki</code>, kept out of git so it stays private to you. Put it in a checked-in folder like <code>docs/wiki</code> to diff and commit it like code.</td>
+    <td width="50%" valign="top"><b>Stays on your machine</b><br>A local wiki needs no account and no server. The browser view listens on your machine only and is protected by a token.</td>
   </tr>
   <tr>
-    <td width="50%" valign="top"><b>One wiki for every agent</b><br>Claude Code, Codex, Cursor, VS Code and Cowork use the same MCP tools on the same files.</td>
-    <td width="50%" valign="top"><b>Open source</b><br>The plugin, the <code>nim</code> CLI, its MCP server and the browser app are MIT licensed.</td>
+    <td width="50%" valign="top"><b>One wiki for every agent</b><br>Claude Code, Codex, Cowork, Cursor and VS Code all use the same tools on the same files, so you can switch agents without losing what they wrote.</td>
+    <td width="50%" valign="top"><b>Drawings, sheets and mockups too</b><br>Drawings, mind maps, spreadsheets, data models, mockups and canvases are pages too. Each keeps its own file, such as <code>.excalidraw</code>, <code>.csv</code>, <code>.prisma</code> or <code>.mockup.html</code>, so other tools can still open it.</td>
   </tr>
 </table>
 
@@ -98,7 +99,7 @@ Using Cursor, VS Code, Cowork or the Codex app? See [Other agents](#other-agents
 /nimbalyst-wiki:setup
 ```
 
-Claude asks who the wiki is for, then writes a Home page, a writing guide and starter pages from your README and docs. In Codex, ask it to "set up a wiki for this repo."
+Claude asks who the wiki is for, then writes a Home page, a writing guide and starter pages from your README and docs, as markdown files in your repo. In Codex, ask it to "set up a wiki for this repo." For a short tour first, run `/nimbalyst-wiki:start`.
 
 <p align="center">
   <picture>
@@ -117,7 +118,7 @@ At the end of a session, capture writes each decision into the page it affects, 
 
 ### 4. Open it in your browser
 
-Ask your agent to "open the wiki in my browser." You get the page tree and the page editor, with typed pages and type tables. Drawings, mind maps, spreadsheets, calc sheets, data models, mockups and canvases open in their own editors. Edits save straight to the files, and what your agent writes shows up live.
+Ask your agent to "open the wiki in my browser," with nothing to install. You get the page tree and the page editor, and you can edit pages, drawings, mind maps, spreadsheets and mockups. Edits save straight to the files, and what your agent writes shows up live. From a terminal, run `nim wiki serve` (see [`nim` command line](#nim-command-line)).
 
 <p align="center">
   <picture>
@@ -155,9 +156,9 @@ Ask your agent to "open the wiki in my browser." You get the page tree and the p
     </td>
   </tr>
   <tr>
-    <td width="50%" valign="top">
+    <td colspan="2" valign="top">
       <h3>Track things with types</h3>
-      Ask your agent to track competitors, customers or features. Each item gets its own page with your fields, and the type keeps a table of every item.
+      Ask your agent to track competitors, customers or features, and it creates a type with the fields you care about. Each item gets its own page with those fields at the top, and the type keeps a table of every item.
       <br><br>
       <code>Track our competitors in the wiki: category, threat, setup speed and payment recovery for each.</code>
       <br><br>
@@ -166,21 +167,91 @@ Ask your agent to "open the wiki in my browser." You get the page tree and the p
         <img src="docs/images/types-light.webp" alt="The Competitors type in the browser, a table listing Cartwell, Paylane and Tillpoint, each one its own page">
       </picture>
     </td>
-    <td width="50%" valign="top">
-      <h3>2x2s and diagrams in a page</h3>
-      Ask for a 2x2, a flowchart or a sequence diagram and your agent draws it in the page, where you can edit it.
-      <br><br>
-      <code>Add a 2x2 of setup speed against payment recovery to the Competitors page.</code>
-      <br><br>
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="docs/images/2x2-dark.webp">
-        <img src="docs/images/2x2-light.webp" alt="The Competitors page in the browser with a 2x2 of setup speed against payment recovery">
-      </picture>
-    </td>
   </tr>
 </table>
 
 You can also just ask: "what does the wiki say about auth?", "add a page about our deploy process", "open the wiki in my browser".
+
+---
+
+## Add drawings, mind maps, spreadsheets and more
+
+Pages hold more than text. Ask your agent for a drawing, a mind map, a spreadsheet, a data model, a mockup or a canvas, and it builds the page in your wiki. Open any of them in your browser to edit, or start one yourself from the New page menu.
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Drawings</h3>
+      Excalidraw drawings for flows and architecture. Your agent places the shapes and arrows, and you move them around in the browser.
+      <br><br>
+      <code>Draw the payment retry flow as a page under Payment retries.</code>
+      <br><br>
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/images/editor-drawing-dark.webp">
+        <img src="docs/images/editor-drawing-light.webp" alt="An Excalidraw drawing of the payment retry flow open in the wiki browser view">
+      </picture>
+    </td>
+    <td width="50%" valign="top">
+      <h3>Mind maps</h3>
+      Mind maps for open questions, risks and brainstorms, with nodes you add, move and fold.
+      <br><br>
+      <code>Make a mind map of the open questions and risks for retries.</code>
+      <br><br>
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/images/editor-mindmap-dark.webp">
+        <img src="docs/images/editor-mindmap-light.webp" alt="A mind map of open questions and risks for payment retries open in the wiki browser view">
+      </picture>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Spreadsheets</h3>
+      CSV spreadsheets your agent fills in and you sort and edit like any other sheet.
+      <br><br>
+      <code>Add a spreadsheet of retry outcomes by decline code.</code>
+      <br><br>
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/images/editor-spreadsheet-dark.webp">
+        <img src="docs/images/editor-spreadsheet-light.webp" alt="A spreadsheet of retry outcomes by decline code open in the wiki browser view">
+      </picture>
+    </td>
+    <td width="50%" valign="top">
+      <h3>Data models</h3>
+      Data models from a Prisma schema, drawn as tables and relations you can rearrange.
+      <br><br>
+      <code>Model the retry attempts we store as a data model page.</code>
+      <br><br>
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/images/editor-datamodel-dark.webp">
+        <img src="docs/images/editor-datamodel-light.webp" alt="A data model of payment retry attempts open in the wiki browser view">
+      </picture>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Mockups</h3>
+      HTML mockups of screens, so a decision about the UI sits next to a picture of it.
+      <br><br>
+      <code>Mock up the retry settings screen.</code>
+      <br><br>
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/images/editor-mockup-dark.webp">
+        <img src="docs/images/editor-mockup-light.webp" alt="A mockup of the retry settings screen open in the wiki browser view">
+      </picture>
+    </td>
+    <td width="50%" valign="top">
+      <h3>Canvases</h3>
+      Canvases that lay pages out side by side, with each card a live view of its page.
+      <br><br>
+      <code>Put the retry pages together on one canvas.</code>
+      <br><br>
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="docs/images/editor-canvas-dark.webp">
+        <img src="docs/images/editor-canvas-light.webp" alt="A canvas laying out the payment retry pages side by side in the wiki browser view">
+      </picture>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -199,25 +270,44 @@ The same files open in the free, open-source [Nimbalyst app](https://nimbalyst.c
 
 ## Share it with your team
 
-When the wiki should be shared, move it to [Nimbalyst Teams](https://nimbalyst.com/wiki/teams/). You, your teammates and all of your agents then edit the same pages in real time, from the app or the browser, with comments and history. Teams is paid, and free during beta.
+When your team needs the wiki too, ask your agent to move it to [Nimbalyst Teams](https://nimbalyst.com/wiki/teams/), or run the commands yourself. Your text pages, typed pages and the links between them move to a team wiki where everyone edits the same pages in their browser and every teammate's agents write into it.
 
 ```
-/nimbalyst-wiki:team
+Move this wiki to a team wiki for Northwind.
 ```
 
-Claude walks you through it:
+```sh
+nim login
+nim wiki team-create "Northwind"
+nim wiki move-to-team
+```
+
+- Sign in with your Google account.
+- Create a team and invite teammates by email.
+- The team wiki runs on Nimbalyst's servers on Cloudflare, at [console.nimbalyst.com](https://console.nimbalyst.com).
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/team-home-dark.webp">
+    <img src="docs/images/team-home-light.webp" alt="The team wiki home page in the Nimbalyst web console, with the page tree, the open questions that need the team and recently decided items" width="900">
+  </picture>
+</p>
+
+<details>
+<summary><b>What happens during the move</b></summary>
+<br>
+
+In Claude Code, `/nimbalyst-wiki:team` walks you through it:
 
 1. **Sign in.** Run `/mcp`, choose `nimbalyst-team` and Authenticate. A browser page opens where you sign in to Nimbalyst or create an account.
 2. **Choose a team and project.** With no team yet, Claude proposes a name and creates the team, its first project and a Home page, connected to this repository's git remote. Already in a team? Connect to one of its projects or create a new one.
 3. **Approve the move.** The local server signs in with the same account so pages go straight from your files to Nimbalyst. Claude opens the approval page and you confirm the code.
-4. **Move.** Claude shows what will move, then moves pages, typed pages, types, hierarchy, order, fields and links in one step. If it is interrupted, running it again picks up where it stopped.
+4. **Move.** Claude shows what will move, then moves pages, typed pages, types, hierarchy, order, fields and links in one step. If it is interrupted, running it again picks up where it stopped. Add `--dry-run` to `nim wiki move-to-team` to preview from a terminal.
 5. **Invite.** Claude opens the team wiki in your browser and can invite teammates by email, reading the list back to you first, or create an invite link.
 
-Your local files are not deleted. Commit `.nimbalyst/wiki.json` so your teammates' agents find the same project. From a terminal, `nim login` and then `nim wiki move-to-team` (add `--dry-run` to preview) does the same move.
+Your local files are not deleted. Commit `.nimbalyst/wiki.json` so your teammates' agents find the same project.
 
-<p align="center">
-  <img src="docs/images/team-dark.webp" alt="A team wiki page with three teammates editing at once, their live cursors in the text" width="900">
-</p>
+</details>
 
 <details>
 <summary><b>If you were invited</b></summary>
@@ -226,6 +316,58 @@ Your local files are not deleted. Commit `.nimbalyst/wiki.json` so your teammate
 An invite email or link signs you in to Nimbalyst in the browser and opens the team's wiki. You can read, edit and comment there with nothing installed.
 
 To use the wiki from Claude Code too, install this plugin, run `/mcp`, choose `nimbalyst-team` and Authenticate with the same email. In Codex, run `codex mcp login nimbalyst-team`. If the repository has a committed `.nimbalyst/wiki.json`, your agent uses that team project right away; otherwise it finds the project through the repository's git remote.
+
+</details>
+
+---
+
+## Common questions
+
+<details>
+<summary><b>Do I need the Nimbalyst app?</b></summary>
+<br>
+
+No. Your agent, the `nim` CLI and the browser view give you a complete wiki, including drawings, mind maps, spreadsheets, data models, mockups and canvases you can edit in the browser. Open it in the Nimbalyst app when you want the wiki in the same place as your sessions and code.
+
+</details>
+
+<details>
+<summary><b>What is Nimbalyst?</b></summary>
+<br>
+
+Nimbalyst is the visual workspace for Codex and Claude Code. It runs your agents in parallel sessions and gives you visual editors for the work around them, including tasks, docs, diagrams, mockups, spreadsheets and code, all deeply linked. Every AI edit arrives as a diff you can review. The desktop app is free and open source for individuals, on macOS, Windows and Linux, and Nimbalyst Teams makes it multiplayer.
+
+</details>
+
+<details>
+<summary><b>Do I need an account?</b></summary>
+<br>
+
+Not for a local wiki. You only sign in to Nimbalyst when you share the wiki with your team.
+
+</details>
+
+<details>
+<summary><b>Is it the same wiki as the one in the app?</b></summary>
+<br>
+
+Yes. The app's Local wiki is the same folder of files, so you can start in your agent and open the app later without moving anything.
+
+</details>
+
+<details>
+<summary><b>Where does my wiki live?</b></summary>
+<br>
+
+In your project, in `nimbalyst-local/wiki` by default, which git ignores. Choose a folder such as `docs/wiki` to check it in and share it through git.
+
+</details>
+
+<details>
+<summary><b>What should go in it?</b></summary>
+<br>
+
+Decisions and their reasons, open questions, the preferences and constraints people set, and hard-won lessons. The work itself stays in your sessions, code and trackers, and the wiki links to it.
 
 </details>
 
@@ -353,7 +495,7 @@ These agents get the wiki tools but not the plugin's skills (`setup`, `capture` 
 
 </details>
 
-<details>
+<details id="nim-command-line">
 <summary><b><code>nim</code> command line</b></summary>
 <br>
 
@@ -426,7 +568,8 @@ Agents can edit the files directly too. The MCP tools and `nim` add ids, orderin
 
 <p align="center">
   We build the Nimbalyst Wiki as part of <a href="https://nimbalyst.com">Nimbalyst</a>, the open-source visual workspace for Codex and Claude Code.<br>
-  This repository is published from our main repository, where you can star the project, file issues and contribute.
+  The plugin, the <code>nim</code> CLI, its MCP server and the browser app are MIT licensed.<br>
+  This repository is published from our main repository, where you can read the code, file issues and send pull requests.
 </p>
 
 <p align="center">
