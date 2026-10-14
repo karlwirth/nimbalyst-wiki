@@ -34,6 +34,7 @@
   <a href="#share-it-with-your-team"><b>Teams</b></a> &nbsp;·&nbsp;
   <a href="#common-questions"><b>FAQ</b></a> &nbsp;·&nbsp;
   <a href="#reference"><b>Reference</b></a> &nbsp;·&nbsp;
+  <a href="#feedback-issues-and-contributing"><b>Contribute</b></a> &nbsp;·&nbsp;
   <a href="https://nimbalyst.com/wiki/coding-agents/"><b>Website</b></a>
 </p>
 
@@ -480,6 +481,18 @@ Agents can edit the files directly too. The MCP tools and `nim` add ids, orderin
 
 ---
 
+## Feedback, issues and contributing
+
+The Nimbalyst Wiki is built from the main [Nimbalyst repository](https://github.com/nimbalyst/nimbalyst) and published here with each release (the `SOURCE` file names the commit). Everything about the wiki is handled in this repository:
+
+- **Star this repository** to follow releases and help other people find it.
+- **Report a bug or request a feature** in [Issues](https://github.com/nimbalyst/nimbalyst-wiki/issues/new).
+- **Send a pull request** here. We apply accepted changes to the source in the main repository, credit you, and the next release brings them back here, so the pull request is closed rather than merged.
+
+[CONTRIBUTING.md](CONTRIBUTING.md) shows where each part of this repository comes from. For the Nimbalyst app itself, use the [main repository](https://github.com/nimbalyst/nimbalyst).
+
+---
+
 ## Open it in the Nimbalyst app
 
 The same files open in the free, open-source [Nimbalyst app](https://nimbalyst.com/wiki/local/), with live tables, 2x2s, mockups and diagrams you edit in place, next to your sessions and code. Open **Wiki** in the navigation gutter (Cmd+D) and choose **Local**. Nothing moves: the app reads the same folder your agent writes to. Inside the app, agents already have the wiki tools, and the plugin stands aside so each page has one write path.
@@ -505,13 +518,13 @@ The same files open in the free, open-source [Nimbalyst app](https://nimbalyst.c
 <h3 align="center">Built with love by the Nimbalyst team</h3>
 
 <p align="center">
-  We build the Nimbalyst Wiki as part of <a href="https://nimbalyst.com">Nimbalyst</a>, the open-source visual workspace for Codex and Claude Code.<br>
-  The plugin, the <code>nim</code> CLI, its MCP server and the browser app are MIT licensed.<br>
-  This repository is published from our main repository, where you can read the code, file issues and send pull requests.
+  The Nimbalyst Wiki is part of <a href="https://nimbalyst.com">Nimbalyst</a>, the open-source visual workspace for Codex and Claude Code, and is built from <a href="https://github.com/nimbalyst/nimbalyst">our main repository</a>.<br>
+  For anything about the wiki, star this repository, file issues and send pull requests here. MIT licensed.
 </p>
 
 <p align="center">
-  <a href="https://github.com/nimbalyst/nimbalyst"><b>Nimbalyst on GitHub</b></a> &nbsp;·&nbsp;
+  <a href="https://github.com/nimbalyst/nimbalyst-wiki"><b>Star the Nimbalyst Wiki</b></a> &nbsp;·&nbsp;
+  <a href="https://github.com/nimbalyst/nimbalyst-wiki/issues/new">Report an issue</a> &nbsp;·&nbsp;
   <a href="CONTRIBUTING.md">Contributing</a> &nbsp;·&nbsp;
-  <a href="LICENSE">MIT license</a>
+  <a href="https://github.com/nimbalyst/nimbalyst">Nimbalyst on GitHub</a>
 </p>
