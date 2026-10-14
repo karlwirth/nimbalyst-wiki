@@ -307,21 +307,25 @@ To use the wiki from Claude Code too, install this plugin, run `/mcp`, choose `n
 
 Decisions and their reasons, open questions, the preferences and constraints people set, and hard-won lessons. The work itself stays in your sessions, code and trackers, and the wiki links to it. It's the strategic view.
 
+### Where does my wiki live?
+
+In your project, in `nimbalyst-local/wiki` by default, which git ignores. Choose a folder such as `docs/wiki` to check it in and share it through git.
+
+### Do I need an account?
+
+Not for a local wiki. You only sign in to Nimbalyst when you share the wiki with your team.
+
 ### Do I need the Nimbalyst app?
 
 No. Your agent, the `nim` CLI and the browser view give you a complete wiki, including drawings, mind maps, spreadsheets, data models, mockups and canvases you can edit in the browser. Open it in the Nimbalyst app when you want the wiki in the same place as your sessions and code.
 
-### What is Nimbalyst?
+### What is the Nimbalyst app?
 
 Nimbalyst is the visual workspace for Codex and Claude Code. It runs your agents in parallel sessions and gives you visual editors for the work around them, including tasks, docs, diagrams, mockups, spreadsheets and code, all deeply linked. Every AI edit arrives as a diff you can review. The desktop app is free and open source for individuals, on macOS, Windows and Linux, and Nimbalyst Teams makes it multiplayer.
 
-### Is it the same wiki as the one in the app?
+### Is it the same wiki as the one in the Nimbalyst app?
 
 Yes. The app's Local wiki is the same folder of files, so you can start in your agent and open the app later without moving anything.
-
-### Where does my wiki live?
-
-In your project, in `nimbalyst-local/wiki` by default, which git ignores. Choose a folder such as `docs/wiki` to check it in and share it through git.
 
 ---
 
