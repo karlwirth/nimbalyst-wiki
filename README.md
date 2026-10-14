@@ -489,7 +489,7 @@ The Nimbalyst Wiki is built from the main [Nimbalyst repository](https://github.
 - **Report a bug or request a feature** in [Issues](https://github.com/nimbalyst/nimbalyst-wiki/issues/new).
 - **Send a pull request** here. We apply accepted changes to the source in the main repository, credit you, and the next release brings them back here, so the pull request is closed rather than merged.
 
-[CONTRIBUTING.md](CONTRIBUTING.md) shows where each part of this repository comes from. For the Nimbalyst app itself, use the [main repository](https://github.com/nimbalyst/nimbalyst).
+[CONTRIBUTING.md](https://github.com/nimbalyst/nimbalyst-wiki/blob/main/CONTRIBUTING.md) shows where each part of this repository comes from. For the Nimbalyst app itself, use the [main repository](https://github.com/nimbalyst/nimbalyst).
 
 ---
 
@@ -524,6 +524,6 @@ The same files open in the free, open-source [Nimbalyst app](https://nimbalyst.c
 <p align="center">
   <a href="https://github.com/nimbalyst/nimbalyst-wiki"><b>Star the Nimbalyst Wiki</b></a> &nbsp;·&nbsp;
   <a href="https://github.com/nimbalyst/nimbalyst-wiki/issues/new">Report an issue</a> &nbsp;·&nbsp;
-  <a href="CONTRIBUTING.md">Contributing</a> &nbsp;·&nbsp;
+  <a href="https://github.com/nimbalyst/nimbalyst-wiki/blob/main/CONTRIBUTING.md">Contributing</a> &nbsp;·&nbsp;
   <a href="https://github.com/nimbalyst/nimbalyst">Nimbalyst on GitHub</a>
 </p>
