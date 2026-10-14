@@ -10745,6 +10745,73 @@ function isRecord2(value) {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
+// ../extension-sdk/src/collab/createTextCollabContentAdapter.ts
+var TEXT_COLLAB_DEFAULT_FIELD2 = "content";
+function decodeSource7(source) {
+  if (typeof source === "string") return source;
+  try {
+    return new TextDecoder("utf-8").decode(source);
+  } catch {
+    return "";
+  }
+}
+function createTextCollabContentAdapter2(options) {
+  const field = options.textField ?? TEXT_COLLAB_DEFAULT_FIELD2;
+  const layoutVersion = options.layoutVersion ?? 1;
+  const getText = (yDoc) => yDoc.getText(field);
+  return {
+    documentType: options.documentType,
+    fileExtensions: options.fileExtensions,
+    mimeType: options.mimeType,
+    layoutVersion,
+    // Lets the host rebuild this adapter in another process (e.g. Electron
+    // main) without loading the extension. See reconstruct fn below.
+    serializableDescriptor: {
+      kind: "text",
+      documentType: options.documentType,
+      fileExtensions: options.fileExtensions,
+      mimeType: options.mimeType,
+      textField: field,
+      layoutVersion
+    },
+    isEmpty(yDoc) {
+      return getText(yDoc).length === 0;
+    },
+    seedFromFile(yDoc, source) {
+      const text = decodeSource7(source);
+      if (!text) return;
+      const yText = getText(yDoc);
+      if (yText.length > 0) return;
+      yText.insert(0, text);
+    },
+    applyFromFile(yDoc, source) {
+      const text = decodeSource7(source);
+      yDoc.transact(() => {
+        const yText = getText(yDoc);
+        if (yText.length > 0) yText.delete(0, yText.length);
+        if (text.length > 0) yText.insert(0, text);
+      });
+    },
+    exportToFile(yDoc) {
+      return getText(yDoc).toString();
+    },
+    toPlainText(yDoc) {
+      return getText(yDoc).toString();
+    }
+  };
+}
+
+// ../runtime/src/ui/htmlEmbed/htmlPageCodec.ts
+var HTML_PAGE_DOCUMENT_TYPE = "html";
+var HTML_PAGE_FILE_EXTENSION = ".html";
+var HTML_PAGE_TEXT_FIELD = "content";
+var HtmlPageCollabContentAdapter = createTextCollabContentAdapter2({
+  documentType: HTML_PAGE_DOCUMENT_TYPE,
+  fileExtensions: [HTML_PAGE_FILE_EXTENSION],
+  mimeType: "text/html",
+  textField: HTML_PAGE_TEXT_FIELD
+});
+
 // ../runtime/src/sync/DocumentDecisionClient.ts
 var StaleDecisionReadError = class extends Error {
   constructor() {
@@ -12730,7 +12797,8 @@ var editorCodecs = createEditorCodecs([
   MockupHtmlCollabContentAdapter,
   CalcSheetCollabContentAdapter,
   mindmapCodec,
-  canvasCollabCodec
+  canvasCollabCodec,
+  HtmlPageCollabContentAdapter
 ]);
 var EDITOR_MODELS_VERSION = 2;
 export {
